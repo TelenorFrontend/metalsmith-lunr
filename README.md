@@ -62,7 +62,8 @@ metalsmith.use(lunr({
 - `ref`: `metadata search reference for document`
 - `indexPath`: `path for JSON index file`
 - `pipelineFunctions`: [`lunr pipeline functions`] Functions will be called in order by lunr, see [lunr doc](http://lunrjs.com/docs/#Pipeline) for more information.
-- `includeFields`: `true/false` Adds the searchable fields of the metalsmith files to the index object.
+- `metadataWhitelist`: [`strings`] lunr metadata that should be added to the search index objexct. ex. `["position"]`.
+- `includeFields`: [`strings`] Metalsmith metadata that should be added to the search index object.
 - `preprocess`: a callback function that can pre-process the content of each file before it is indexed. (For example stripping HTML tags). This will not affect the content of the files themselves. The callback is passed the content as a string to it's first argument. The metadata (including the raw content buffer) can be access with `this`. The callback **must return** a string.
 
 #### Default Parameter Values
@@ -70,6 +71,8 @@ metalsmith.use(lunr({
   - `fields`: {`contents`: `1`}
   - `ref`: `filePath`
   - `indexPath`: `searchIndex.json`
+  - `metadataWhitelist`: `[]`
+  - `includeFields`: `[]`
 
 
 ## Client Side Search
