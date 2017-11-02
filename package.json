@@ -1,5 +1,5 @@
 {
-  "name": "metalsmith-lunr",
+  "name": "@telenorfrontend/metalsmith-lunr",
   "version": "0.3.0",
   "description": "Lunr plugin for Metalsmith",
   "main": "lib/index.js",
